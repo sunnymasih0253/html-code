@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .faq-heading {
+            border-bottom: #777;
+            padding: 20px 60px;
+            text-align: center;
+        }
+
+        .faq-page {
+            color: #444;
+            cursor: pointer;
+            padding: 30px 20px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            border-bottom: 5px solid #000;
+            margin: 0;
+        }
+
+        .faq-body {
+            padding: 0 18px;
+            background-color: white;
+            opacity: 0;
+            height: 0;
+            transition: all 0.4s;
+        }
+
+        .faq-page:after {
+            content: '\02795';
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+            transition: 0.3s linear;
+        }
+
+        h1.faq-page.active+.faq-body {
+            opacity: 1;
+            height: auto;
+        }
+
+        .faq-page.active:after {
+            transform: rotate(135deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="faq-heading">FAQ'S</h1>
+        <section class="faq-container">
+            <div class="faq-one">
+                <!-- faq question -->
+                <h1 class="faq-page">What is an FAQ Page?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+                        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+                        aperiam.
+                        Perspiciatis, porro!</p>
+                </div>
+            </div>
+
+            <div class="faq-two">
+                <!-- faq question -->
+                <h1 class="faq-page">Why do you need an FAQ page?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+                        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+                        aperiam.
+                        Perspiciatis, porro!</p>
+                </div>
+            </div>
+
+            <div class="faq-three">
+                <!-- faq question -->
+                <h1 class="faq-page ">Does it improves the user experience of a website?</h1>
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+                        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+                        aperiam.
+                        Perspiciatis, porro!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        let faqPage = document.querySelectorAll('.faq-page');
+        // let faqBody = document.querySelectorAll('.faq-body');
+
+        // faqPage.forEach(item => {
+        //     item.addEventListener('click',()=>{
+        //         item.classList.toggle('active');
+        //     });
+        // });
+
+        for (let i of faqPage) {
+            i.addEventListener('click', () => {
+                // for (let j of faqPage) {
+                //         j.classList.remove('active');
+                // }
+                i.classList.toggle('active');
+
+            });
+        }
+        // let nextSibling = currentNode.nextElementSibling;
+
+
+
+
+    </script>
+</body>
+
+</html>
