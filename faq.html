@@ -43,6 +43,7 @@
             background-color: white;
             opacity: 0;
             height: 0;
+            overflow: hidden;
             transition: all 0.4s;
         }
 
@@ -58,6 +59,7 @@
         h1.faq-page.active+.faq-body {
             opacity: 1;
             height: auto;
+            overflow: visible;
         }
 
         .faq-page.active:after {
@@ -109,28 +111,19 @@
     </div>
     <script>
         let faqPage = document.querySelectorAll('.faq-page');
-        // let faqBody = document.querySelectorAll('.faq-body');
-
-        // faqPage.forEach(item => {
-        //     item.addEventListener('click',()=>{
-        //         item.classList.toggle('active');
-        //     });
-        // });
-
         for (let i of faqPage) {
             i.addEventListener('click', () => {
-                // for (let j of faqPage) {
-                //         j.classList.remove('active');
-                // }
-                i.classList.toggle('active');
-
+                if(i.classList.contains("active")){
+                    i.classList.remove('active');
+                }else{
+                    let active =  document.querySelector('.faq-page.active');
+                    if(active){
+                        active.classList.remove('active');
+                    }
+                    i.classList.add('active');
+                }
             });
         }
-        // let nextSibling = currentNode.nextElementSibling;
-
-
-
-
     </script>
 </body>
 
